@@ -6,6 +6,9 @@ public class RionAction extends ActionSupport {
 
 	public String execute() {
 
+
+
+
 		return SUCCESS;
 	}
 

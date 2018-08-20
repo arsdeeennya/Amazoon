@@ -15,7 +15,7 @@
 <div id="contents">
 <h1>ログイン画面</h1>
 
-<div align = center>
+<div id = "center">
 			<h3>商品を購入する際にはログインをお願いします</h3>
 			<s:form action="LoginAction">
 			<table>

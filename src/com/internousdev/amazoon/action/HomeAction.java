@@ -22,6 +22,10 @@ public class HomeAction extends ActionSupport implements SessionAware {
 			session.put("logined", 0);
 		}
 
+
+		animalInfoDtoList = animalInfoDAO.getBuyAnimalInfo();
+
+
 		session.put("rionName", animalInfoDtoList.get(0).getAnimalName());
 		session.put("rionPrice", animalInfoDtoList.get(0).getAnimalPrice());
 		session.put("rionStrong", animalInfoDtoList.get(0).getAnimalStrong());

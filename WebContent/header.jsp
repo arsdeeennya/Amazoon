@@ -47,7 +47,7 @@ amazoon
 	</s:else>
 	<s:if test="#session.logined==1">
 		<li><s:submit value="マイページ" class="submit_btn" onclick="goMyPageAction();"/></li>
-		<li class = welcome_name>ようこそ！<s:property value="#session.login_user_id"/>さん</li>
+		<li><span id="welcome_name">ようこそ！<s:property value="#session.login_user_id"/>さん</span></li>
 	</s:if>
 </s:form>
 </ul>

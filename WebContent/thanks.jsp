@@ -15,7 +15,7 @@
 <div id="contents">
 <h1>決済完了画面</h1>
 
-<div id = center>
+<div id = "center">
 
 <h3>ご購入ありがとうございます</h3>
 </div>

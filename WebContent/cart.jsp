@@ -17,7 +17,7 @@
 
 
 
-<table align = center border = "1" >
+<table id = "center" border = "1" >
 <thead>
 <tr>
 <th><s:label value="動物名"/></th>
@@ -51,7 +51,15 @@
 							<td><s:property value="payment" /></td>
 							<td><s:property value="insert_date" /></td>
 						</tr>
+						<tr>
+							<td><s:property value="らいおん" /></td>
+							<td><s:property value="1000000" /><span>円</span></td>
+							<td><s:property value="3" /><span>個</span></td>
+							<td><s:property value="" /></td>
+							<td><s:property value="insert_date" /></td>
+						</tr>
 					</s:iterator>
+			</s:elseif>
 				</table>
 
 

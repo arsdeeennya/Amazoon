@@ -13,13 +13,14 @@
 <h1></h1>
 
 
-<div id="contents" align = center>
+<div id="contents" >
+<div id = "center">
 			<h3>ユーザーの登録が完了いたしました。</h3>
 			<div>
 				<a href='<s:url action="GoLoginAction"/>'>ログインへ</a>
 			</div>
-		</div>
-
+</div>
+</div>
 
 
 

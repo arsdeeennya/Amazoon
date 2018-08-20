@@ -15,7 +15,7 @@
 <h1>ログイン画面</h1>
 
 <div id="contents" >
-			<div align = center>
+			<div id = "center">
 			<h3>登録する内容は以下でよろしいですか。</h3>
 			<table>
 				<s:form action="UserCreateCompleteAction">

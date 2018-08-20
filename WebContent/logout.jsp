@@ -15,7 +15,7 @@
 <div id="contents">
 <h1>ログアウト画面</h1>
 
-<div id = center>
+<div id = "center">
 
 <h3>ログアウトが完了しました</h3>
 </div>
