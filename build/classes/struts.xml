@@ -16,12 +16,12 @@
 			<result name="success">bird.jsp</result>
 		</action>
 
-		<action name="BuyBirdAction" class="com.internousdev.amazoon.action.BuyRionAction"
+		<action name="BuyBirdAction" class="com.internousdev.amazoon.action.BuyBirdAction"
 			method="execute">
 			<result name="success">cart.jsp</result>
 		</action>
 
-		<action name="BuyCrocoAction" class="com.internousdev.amazoon.action.BuyRionAction"
+		<action name="BuyCrocoAction" class="com.internousdev.amazoon.action.BuyCrocoAction"
 			method="execute">
 			<result name="success">cart.jsp</result>
 		</action>
