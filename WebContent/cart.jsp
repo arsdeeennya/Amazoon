@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head>
@@ -9,74 +9,64 @@
 
 </head>
 <body>
-<jsp:include page="header.jsp" />
+	<jsp:include page="header.jsp" />
 
-<div id="contents">
+	<div id="contents">
 
-<h1>カート情報</h1>
+		<h1>カート情報</h1>
+<div id="center">
+				<s:if test="#session.buyAnimalList == null">
+					<h3>ご購入情報はありません</h3>
+				</s:if>
 
-
-
-<table id = "center" border = "1" >
-<thead>
-<tr>
-<th><s:label value="動物名"/></th>
-<th><s:label value="強さ"/></th>
-<th><s:label value="価格"/></th>
-<th><s:label value="合計金額"/></th>
-</tr>
-</thead>
-
-<tbody>
-<!-- <tr> -->
-<%-- 	<td><s:property value="session.rionName"/></td> --%>
-<%-- 	<td><s:property value="5"/></td> --%>
-<%-- 	<td><s:property value="session.rionPrice"/>円</td> --%>
-<%-- 	<td><s:property value="session.rionPrice"/>円</td> --%>
-<!-- </tr> -->
-
-<s:if test="myPageList == null">
-				<h3>ご購入情報はありません</h3>
-			</s:if>
-
-			<s:elseif test="message == null">
-				<h3>ご購入情報は以下になります。</h3>
-
-
-					<s:iterator value="myPageList">
-						<tr>
-							<td><s:property value="itemName" /></td>
-							<td><s:property value="totalPrice" /><span>円</span></td>
-							<td><s:property value="totalCount" /><span>個</span></td>
-							<td><s:property value="payment" /></td>
-							<td><s:property value="insert_date" /></td>
-						</tr>
-						<tr>
-							<td><s:property value="らいおん" /></td>
-							<td><s:property value="1000000" /><span>円</span></td>
-							<td><s:property value="3" /><span>個</span></td>
-							<td><s:property value="" /></td>
-							<td><s:property value="insert_date" /></td>
-						</tr>
-					</s:iterator>
-			</s:elseif>
-				</table>
-
-
-</tbody>
-
-
-<br><br>
-<div id = "center">
-<s:form action="ThanksAction">
-		<s:submit value="決済" class="submit_btn" />
-		</s:form>
+				<s:elseif test="#session.buyAnimalList != null">
+					<h3>ご購入情報は以下になります。</h3>
+				</s:elseif>
 </div>
-<s:property value="session.price" />
+		<table border="1">
+			<thead>
+				<tr>
+					<th><s:label value="動物名" /></th>
+					<th><s:label value="強さ" /></th>
+					<th><s:label value="価格" /></th>
+				</tr>
+			</thead>
+
+			<tbody>
 
 
-</div>
-<jsp:include page="footer.jsp" />
+				<s:iterator value="#session.buyAnimalList">
+					<tr>
+						<td><s:property value="animalName" /></td>
+						<td><s:property value="animalStrong" /></td>
+						<td><s:property value="animalPrice" />円</td>
+					</tr>
+				</s:iterator>
+
+			</tbody>
+		</table>
+
+
+
+
+
+		<br>
+		<br>
+		<div id="center">
+			<s:form action="ThanksAction">
+				<s:submit value="決済" class="submit_btn" />
+			</s:form>
+
+			<s:form action="CartClearAction">
+				<s:submit value="カートを空にする" class="submit_btn" />
+			</s:form>
+		</div>
+		<s:property value="session.price" />
+
+
+	</div>
+
+	<jsp:include page="footer.jsp" />
 
 </body>
 </html>

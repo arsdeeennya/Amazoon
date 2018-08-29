@@ -24,11 +24,12 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		loginDTO = loginDAO.getLoginUserInfo(loginUserId, loginPassword);
 		session.put("loginUser", loginDTO);
 
-		if (((LoginDTO) session.get("loginUser")).getLoginFlg()) {//?ログインが許可済で値がセットされる
+		if (((LoginDTO) session.get("loginUser")).getLoginFlg()) {
 			result = SUCCESS;
 
 			session.put("login_user_id", loginDTO.getLoginId());
 			session.put("logined", 1);
+
 
 			return result;
 		}

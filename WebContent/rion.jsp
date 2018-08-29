@@ -11,15 +11,16 @@
 <jsp:include page="header.jsp" />
 
 <div id="contents" >
-<h1>ライオン</h1>
+<h1><s:property value="#session.rionName" /></h1>
 
 <main>
 	<div class = "main-container">
 	<div class="animal_box">
-		<div class ="left"><img src="./images/lion-3372731_640.jpg"  alt="代替テキスト"><br>ライオン</div>
+		<div class ="left"><img src="./images/lion-3372731_640.jpg"  alt="代替テキスト"><br><s:property value="#session.rionName" /></div>
 		<div class ="right">
-		価格:1,000,000円<br><br>
-		強さ:★★★★★<br><br>
+
+		価格:<s:property value="#session.rionPrice" />円<br><br>
+		強さ:<s:property value="#session.rionStrong" /><br><br>
 		頭数:1頭<br><br><br>
 		<s:form action="BuyRionAction">
 		<s:submit value="購入する" class="submit_btn" />

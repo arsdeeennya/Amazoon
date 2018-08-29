@@ -21,7 +21,7 @@ public class LoginDAO {
 			preparedStatement.setString(2, loginPassword);
 			ResultSet resultSet = preparedStatement.executeQuery();
 
-			if (resultSet.next()) {//ここでログイン出来るか否か調べている
+			if (resultSet.next()) {
 				loginDTO.setLoginId(resultSet.getString("login_id"));
 				loginDTO.setLoginPassword(resultSet.getString("login_pass"));
 				loginDTO.setUserName(resultSet.getString("user_name"));

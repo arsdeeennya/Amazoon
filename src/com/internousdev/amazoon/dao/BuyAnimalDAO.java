@@ -15,13 +15,14 @@ public class BuyAnimalDAO {
 	private Connection connection = dbConnector.getConnection();
 
 
-	public List<BuyAnimalDTO> getBuyAnimalInfo() {
+	public List<BuyAnimalDTO> getBuyAnimalInfo(String animalId) {
 		List<BuyAnimalDTO> buyAnimalDtoList = new ArrayList<BuyAnimalDTO>();
 
-		String sql = "select id,animal_name,animal_strong,animal_price from animal_info_transaction";
+		String sql = "select * from animal_info_transaction where id = ? ";
 
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, animalId);
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			while(resultSet.next()) {

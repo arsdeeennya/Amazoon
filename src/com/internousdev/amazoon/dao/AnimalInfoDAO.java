@@ -26,6 +26,7 @@ public class AnimalInfoDAO {
 
 			while(resultSet.next()) {
 				AnimalInfoDTO animalInfoDTO = new AnimalInfoDTO();
+				animalInfoDTO.setAnimalId(resultSet.getInt("id"));
 				animalInfoDTO.setAnimalName(resultSet.getString("animal_name"));
 				animalInfoDTO.setAnimalPrice(resultSet.getInt("animal_price"));
 				animalInfoDTO.setAnimalStrong(resultSet.getInt("animal_strong"));

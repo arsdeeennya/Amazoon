@@ -11,17 +11,17 @@
 <jsp:include page="header.jsp" />
 
 <div id="contents" >
-<h1>ヒクイドリ</h1>
+<h1><s:property value="#session.birdName" /></h1>
 
 <main>
 	<div class = "main-container">
 	<div class="animal_box">
-		<div class ="left"><img src="./images/cassowary-245192_640.jpg"  alt="代替テキスト"><br>ヒクイドリ</div>
+		<div class ="left"><img src="./images/cassowary-245192_640.jpg"  alt="代替テキスト"><br><s:property value="#session.birdName" /></div>
 		<div class ="right">
-		価格:7,000円<br><br>
-		強さ:★★☆☆☆<br><br>
+		価格:<s:property value="#session.birdPrice" />円<br><br>
+		強さ:<s:property value="#session.birdStrong" /><br><br>
 		頭数:1頭<br><br><br>
-		<s:form action="GoLoginAction">
+		<s:form action="BuyBirdAction">
 		<s:submit value="購入する" class="submit_btn" />
 		</s:form>
 		</div>
