@@ -12,6 +12,9 @@
 function goLoginAction(){
 	document.getElementById("form").action="GoLoginAction";
 }
+function goHouseAction(){
+	document.getElementById("form").action="HouseAction";
+}
 function goMyPageAction(){
 	document.getElementById("form").action="MyPageAction";
 }
@@ -38,6 +41,7 @@ amazoon
 <s:form id="form" name="form" action="GoLoginAction">
 
 	<li><s:submit value="動物一覧" class="submit_btn" onclick="goAnimalAction();"/></li>
+	<li><s:submit value="住家一覧" class="submit_btn" onclick="goHouseAction();"/></li>
 	<li><s:submit value="カート" class="submit_btn" onclick="goCartAction();"/><li>
 	<s:if test="#session.logined==1">
 	<li><s:submit value="ログアウト" class="submit_btn" onclick="goLogoutAction();"/></li>

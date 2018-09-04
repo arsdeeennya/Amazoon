@@ -11,6 +11,10 @@ public class ThanksAction extends ActionSupport implements SessionAware {
 
 	public String execute() {
 
+		String result = SUCCESS;
+
+//		session.put("rionId", animalInfoDtoList.get(0).getAnimalId());
+
 		session.remove("buyAnimalList");
 
 		return SUCCESS;

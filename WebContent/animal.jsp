@@ -25,6 +25,9 @@
 	<div class = "animal_box_name">
 		<a href='<s:url action = "BirdAction"/>'><img src="./images/cassowary-245192_640.jpg"  alt="代替テキスト"><br>ヒクイドリ</a>
 	</div>
+	<div class = "animal_box_name">
+		<a href='<s:url action = "BobAction"/>'><img src="./images/bob.jpg"  alt="代替テキスト"><br>野獣</a>
+	</div>
 </div>
 </div>
 <jsp:include page="footer.jsp" />

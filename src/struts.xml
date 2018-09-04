@@ -16,7 +16,18 @@
 			<result name="success">bird.jsp</result>
 		</action>
 
+		<action name="BobAction" class="com.internousdev.amazoon.action.BobAction"
+			method="execute">
+			<result name="success">bob.jsp</result>
+		</action>
+
+
 		<action name="BuyBirdAction" class="com.internousdev.amazoon.action.BuyBirdAction"
+			method="execute">
+			<result name="success">cart.jsp</result>
+		</action>
+
+		<action name="BuyBobAction" class="com.internousdev.amazoon.action.BuyBobAction"
 			method="execute">
 			<result name="success">cart.jsp</result>
 		</action>
@@ -51,6 +62,11 @@
 		<action name="HomeAction" class="com.internousdev.amazoon.action.HomeAction"
 			method="execute">
 			<result name="success">animal.jsp</result>
+		</action>
+
+		<action name="HouseAction" class="com.internousdev.amazoon.action.HouseAction"
+			method="execute">
+			<result name="success">house.jsp</result>
 		</action>
 
 		<action name="LoginAction" class="com.internousdev.amazoon.action.LoginAction"

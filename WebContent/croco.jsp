@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="./css/style.css">
-<title>ユーザー登録</title>
+<title>ワニ</title>
 </head>
 <body>
 <jsp:include page="header.jsp" />

@@ -8,6 +8,7 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.amazoon.dao.AnimalInfoDAO;
+import com.internousdev.amazoon.dao.MCategoryDAO;
 import com.internousdev.amazoon.dto.AnimalInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -33,10 +34,21 @@ public class HomeAction extends ActionSupport implements SessionAware {
 		session.put("crocoName", animalInfoDtoList.get(1).getAnimalName());
 		session.put("crocoPrice", animalInfoDtoList.get(1).getAnimalPrice());
 		session.put("crocoStrong", animalInfoDtoList.get(1).getAnimalStrong());
-		session.put("birdId", animalInfoDtoList.get(0).getAnimalId());
+		session.put("birdId", animalInfoDtoList.get(2).getAnimalId());
 		session.put("birdName", animalInfoDtoList.get(2).getAnimalName());
 		session.put("birdPrice", animalInfoDtoList.get(2).getAnimalPrice());
 		session.put("birdStrong", animalInfoDtoList.get(2).getAnimalStrong());
+		session.put("bobId", animalInfoDtoList.get(3).getAnimalId());
+		session.put("bobName", animalInfoDtoList.get(3).getAnimalName());
+		session.put("bobPrice", animalInfoDtoList.get(3).getAnimalPrice());
+		session.put("bobStrong", animalInfoDtoList.get(3).getAnimalStrong());
+
+		if(!session.containsKey("mCategoryList")) {
+			MCategoryDAO mCategoryDao = new MCategoryDAO();
+			mCategoryDtoList = mCategoryDao.getMCategoryList();
+			session.put("mCategoryDtoList", mCategoryDtoList);
+		}
+
 
 		return SUCCESS;
 	}

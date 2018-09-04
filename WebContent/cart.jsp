@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="./css/style.css">
-<title>動物一覧</title>
+<title>カート</title>
 
 </head>
 <body>
@@ -21,7 +21,7 @@
 
 				<s:elseif test="#session.buyAnimalList != null">
 					<h3>ご購入情報は以下になります。</h3>
-				</s:elseif>
+
 </div>
 		<table border="1">
 			<thead>
@@ -47,19 +47,25 @@
 		</table>
 
 
-
+				</s:elseif>
 
 
 		<br>
 		<br>
 		<div id="center">
-			<s:form action="ThanksAction">
-				<s:submit value="決済" class="submit_btn" />
-			</s:form>
 
-			<s:form action="CartClearAction">
-				<s:submit value="カートを空にする" class="submit_btn" />
+		<s:if test="#session.logined==1">
+			<s:form action="ThanksAction"><s:submit value="決済" class="submit_btn" /></s:form>
+			</s:if>
+
+		<s:else>
+			<s:form action="LoginAction"><s:submit value="決済" class="submit_btn" />
 			</s:form>
+		</s:else>
+
+
+
+
 		</div>
 		<s:property value="session.price" />
 
