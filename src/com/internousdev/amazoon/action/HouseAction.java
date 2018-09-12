@@ -6,7 +6,6 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.amazoon.dao.MCategoryDAO;
 import com.internousdev.amazoon.dao.ProductInfoDAO;
 import com.internousdev.amazoon.dto.MCategoryDTO;
 import com.internousdev.amazoon.dto.PaginationDTO;
@@ -48,8 +47,8 @@ public class HouseAction extends ActionSupport implements SessionAware{
 		session.put("previousPageNo", paginationDTO.getPreviousPageNo());
 
 		if(!session.containsKey("mCategoryList")) {
-			MCategoryDAO mCategoryDao = new MCategoryDAO();
-			mCategoryDtoList = mCategoryDao.getMCategoryList();
+//			MCategoryDAO mCategoryDao = new MCategoryDAO();
+//			mCategoryDtoList = mCategoryDao.getMCategoryList();
 			session.put("mCategoryDtoList", mCategoryDtoList);
 		}
 

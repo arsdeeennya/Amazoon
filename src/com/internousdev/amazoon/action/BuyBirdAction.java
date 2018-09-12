@@ -23,7 +23,7 @@ public class BuyBirdAction extends ActionSupport implements SessionAware {
 
 	public String execute() throws SQLException {
 
-		buyAnimalList = buyAnimalDAO.getBuyAnimalInfo(session.get("rionId").toString());
+		buyAnimalList = buyAnimalDAO.getBuyAnimalInfo(session.get("birdId").toString());
 
 		session.put("buyAnimalList", buyAnimalList);
 

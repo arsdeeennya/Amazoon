@@ -8,7 +8,6 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.amazoon.dao.AnimalInfoDAO;
-import com.internousdev.amazoon.dao.MCategoryDAO;
 import com.internousdev.amazoon.dto.AnimalInfoDTO;
 import com.internousdev.amazoon.dto.MCategoryDTO;
 import com.opensymphony.xwork2.ActionSupport;
@@ -47,8 +46,8 @@ public class HomeAction extends ActionSupport implements SessionAware {
 		session.put("bobStrong", animalInfoDtoList.get(3).getAnimalStrong());
 
 		if(!session.containsKey("mCategoryList")) {
-			MCategoryDAO mCategoryDao = new MCategoryDAO();
-			mCategoryDtoList = mCategoryDao.getMCategoryList();
+//			MCategoryDAO mCategoryDao = new MCategoryDAO();
+//			mCategoryDtoList = mCategoryDao.getMCategoryList();
 			session.put("mCategoryDtoList", mCategoryDtoList);
 		}
 
