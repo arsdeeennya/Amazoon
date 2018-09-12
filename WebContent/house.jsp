@@ -15,14 +15,39 @@
 
 <h1>住家一覧</h1>
 
-<div class="animal_box">
-	<div class = "animal_box_name">
-		<a href='<s:url action = "BobAction"/>'><img src="./images/pool.jpg"  alt="代替テキスト"><br>プール</a>
-	</div>
-	<div class = "animal_box_name">
-		<a href='<s:url action = "BobAction"/>'><img src="./images/water.jpg"  alt="代替テキスト"><br>水たまり</a>
-	</div>
+<s:if test="productInfoDtoList==null">
+<div class="info">
+検索結果がありません。
 </div>
+</s:if>
+<s:else>
+<div id="product-list">
+<s:iterator value="#session.productInfoDtoList">
+<div class="product-list-box">
+<ul>
+	<li>
+	<a href='<s:url action="ProductDetailsAction">
+	<s:param name="productId" value="%{productId}"/>
+	</s:url>'><img src='<s:property value="imageFilePath"/>/<s:property value="imageFileName"/>' class="item-image-box-200"/></a><br>
+	<s:property value="productName"/><br>
+	<s:property value="productNameKana"/><br>
+	<s:property value="price"/>円<br>
+  </li>
+</ul>
+</div>
+</s:iterator>
+</div>
+<div class="pager">
+<s:iterator begin="1" end="#session.totalPageSize" status="pageNo">
+	<s:if test="#session.currentPageNo == #pageNo.count">
+		<s:property value="%{#pageNo.count}"/>
+	</s:if>
+	<s:else>
+		<a href="<s:url action='SearchItemAction'><s:param name='pageNo' value='%{#pageNo.count}'/><s:param name='categoryId' value='%{categoryId}'/></s:url> ">	<s:property value="%{#pageNo.count}"/></a>
+	</s:else>
+</s:iterator>
+</div>
+</s:else>
 
 </div>
 <jsp:include page="footer.jsp" />

@@ -10,12 +10,15 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.internousdev.amazoon.dao.AnimalInfoDAO;
 import com.internousdev.amazoon.dao.MCategoryDAO;
 import com.internousdev.amazoon.dto.AnimalInfoDTO;
+import com.internousdev.amazoon.dto.MCategoryDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class HomeAction extends ActionSupport implements SessionAware {
 	private Map<String, Object> session;
 	AnimalInfoDAO animalInfoDAO = new AnimalInfoDAO();
 	List<AnimalInfoDTO> animalInfoDtoList = new ArrayList<AnimalInfoDTO>();
+	private List<MCategoryDTO> mCategoryDtoList = new ArrayList<MCategoryDTO>();
+
 
 	public String execute() throws SQLException {
 
@@ -60,5 +63,31 @@ public class HomeAction extends ActionSupport implements SessionAware {
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
+
+	public AnimalInfoDAO getAnimalInfoDAO() {
+		return animalInfoDAO;
+	}
+
+	public void setAnimalInfoDAO(AnimalInfoDAO animalInfoDAO) {
+		this.animalInfoDAO = animalInfoDAO;
+	}
+
+	public List<AnimalInfoDTO> getAnimalInfoDtoList() {
+		return animalInfoDtoList;
+	}
+
+	public void setAnimalInfoDtoList(List<AnimalInfoDTO> animalInfoDtoList) {
+		this.animalInfoDtoList = animalInfoDtoList;
+	}
+
+	public List<MCategoryDTO> getmCategoryDtoList() {
+		return mCategoryDtoList;
+	}
+
+	public void setmCategoryDtoList(List<MCategoryDTO> mCategoryDtoList) {
+		this.mCategoryDtoList = mCategoryDtoList;
+	}
+
+
 
 }
